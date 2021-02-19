@@ -16,6 +16,7 @@ export default function(editor, opt = {}) {
       defaults: {
         ...defaultModel.prototype.defaults,
         startfrom: c.startTime,
+        icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.52 0 10 4.48 10 10s-4.48 10-10 10C6.47 22 2 17.5 2 12 2 6.48 6.48 2 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5z"></path></svg>`,
         endText: c.endText,
         droppable: false,
         traits: [{
@@ -101,21 +102,21 @@ export default function(editor, opt = {}) {
         if (!comps.length) {
           comps.reset();
           comps.add(`
-            <span data-js="countdown" class="${pfx}-cont">
-              <div class="${pfx}-block">
-                <div data-js="countdown-day" class="${pfx}-digit"></div>
-                <div class="${pfx}-label">${c.labelDays}</div>
+            <span data-js="countdown" data-gjs-type="span" class="${pfx}-cont">
+              <div class="${pfx}-block" data-gjs-type="box">
+                <div data-js="countdown-day"  data-gjs-type="box" class="${pfx}-digit"></div>
+                <div class="${pfx}-label" >${c.labelDays}</div>
               </div>
-              <div class="${pfx}-block">
-                <div data-js="countdown-hour" class="${pfx}-digit"></div>
+              <div class="${pfx}-block" data-gjs-type="box">
+                <div data-js="countdown-hour" data-gjs-type="box" class="${pfx}-digit"></div>
                 <div class="${pfx}-label">${c.labelHours}</div>
               </div>
-              <div class="${pfx}-block">
-                <div data-js="countdown-minute" class="${pfx}-digit"></div>
+              <div class="${pfx}-block" data-gjs-type="box">
+                <div data-js="countdown-minute" data-gjs-type="box" class="${pfx}-digit"></div>
                 <div class="${pfx}-label">${c.labelMinutes}</div>
               </div>
-              <div class="${pfx}-block">
-                <div data-js="countdown-second" class="${pfx}-digit"></div>
+              <div class="${pfx}-block" data-gjs-type="box">
+                <div data-js="countdown-second" data-gjs-type="box" class="${pfx}-digit"></div>
                 <div class="${pfx}-label">${c.labelSeconds}</div>
               </div>
             </span>
